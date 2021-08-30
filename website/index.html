@@ -3,27 +3,124 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ibm project</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <title>E-COM ANALYST</title>
+     <!-- Bootstrap core CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+     crossorigin="anonymous">
+ <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="css/index.css" />
+<link rel="stylesheet" href="css/custom.css" />
 </head>
-<body>
+<body></body>
     
         <div class="top-container">
             <div class="top-container1">
-                <h2 style="max-width:400px;">Hi there allow us to help to analyze the sales</h2>
-            <img src="assets/profile.svg" height="200px"/>
+                <h1 >Hi there !</h1>
+                <h1>kindly allow us to help to analyze the sales.</h1>
+            <img src="assets/profile.svg"/>
             </div>
         </div>
-        <div class="middle-container">
-            <p></p>
-            <img src="assets/sales.png" alt="Sales" height="380px"/>
-            <img src="assets/sales2.png" alt="Sales" height="380px"/>
-            <img src="assets/regionsales.png" alt="Sales" height="380px"/>
-            <img src="assets/profit and sales.png" alt="Sales" height="380px"/>
-            <img src="assets/top 10 products.png" alt="Sales" height="380px"/>
+
+        <div>
+
+            <div class="container-fluid">
+                <p class="heading">This is simple dataset of US superstore from 2014-2018.</p>
+                <main class="row">
+                    <div class="col">
+                      
+        
+                        <div id="table-container"></div>
+                    </div>
+                </main>
+               
+            </div>
+            
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
+            <script src="js/jquery.csv.min.js"></script>
+            <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+            <script src="js/csv_to_html_table.js"></script>
+        
+            <script>
+                function format_link(link) {
+                    if (link)
+                        return "<a href='" + link + "' target='_blank'>" + link + "</a>";
+                    else return "";
+                }
+        
+                CsvToHtmlTable.init({
+                    csv_path: "data/sample-data.csv",
+                    element: "table-container",
+                    allow_download: true,
+                    csv_options: {
+                        separator: ",",
+                        delimiter: '"'
+                    },
+                    datatables_options: {
+                        paging: false
+                    },
+                    custom_formatting: [
+                        [4, format_link]
+                    ]
+                });
+            </script>
+        </div>
+
+        <div class="product-level-analysis">
+            <p class="heading">Product Level Analysis</p>
+            <div>
+               
+                <h2>Relationship between Category and Sub-category</h2>
+                <img src="assets/sales.png" alt="Sales" class="chart"/>
+            </div>
+            <div>
+                <h2>The store has wide variety of Office Supplies especially in Binders and Paper department.</h2>
+                <img src="assets/sales2.png" alt="Sales" class="chart"/>
+            </div>
+            <div>
+                <h2>Highest profit is earned in Copiers while Selling price for Chairs and Phones is extremely high compared to other products.</h2>
+                <img src="assets/profit and sales.png" alt="Sales"  class="chart"/>
+                
+
+            </div>
+            <div>
+                <h2>Distribution of Top 10 Products</h2>
+                <img src="assets/top 10 products.png" alt="Sales" class="chart"/>
+            </div>
+            <div>
+                <h2>People residing in Western part of US tend to order more from superstore.</h2>
+                <img src="assets/regionsales.png" alt="Sales"  class="chart"/>
+            </div>
         </div>
         
+        <div class="product-level-analysis">
+            
+            <p class="heading">Customer Level Analysis</p>
+            <div>
+                 <h2>The distribution is highest in Consumer Segment.</h2>
+                <img src="assets/dis-consumer-end.png" alt="Sales" class="chart"/>
+            </div>
+
+            <div>
+                <h2>Profitable customers</h2>
+               <img src="assets/profit-customers.png" alt="Sales" class="chart"/>
+           </div>
+        </div>
+       
+       
+
+       <section class="footer">
+           <div>
+               <p>WITH LOVE DESIGNED AND DEVELOPED BY</p>
+           </div>
+           <div>
+               <a href="https://github.com/logan0501">Loganathan | </a>
+               <a href="https://github.com/Sethu-bharathi">SethuBharathi | </a>
+               <a href="https://github.com/Naveen-oops">Naveen Kumar</a>
+           </div>
+       </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
